@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAB Design — Mobile Showcase Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN (inside main HTML) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', "ui-serif", "Georgia", "serif"],
+            sans: ['"Inter"', "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+          colors: {
+            paper: "#fbf8f1",
+            cream: "#f3efe4",
+            ink: "#0b1220",
+            line: "rgba(2, 6, 23, .10)",
+            navy: "#17314b",
+            navy2: "#1f3b5b",
+            gold: "#c7a95a"
+          },
+          boxShadow: {
+            soft: "0 20px 45px rgba(2, 6, 23, .12)",
+            card: "0 14px 34px rgba(2, 6, 23, .12)",
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="font-sans bg-paper text-slate-900 overflow-x-hidden">
+  <!-- Scroll progress -->
+  <div class="fixed top-0 left-0 right-0 z-[80] h-1 bg-transparent">
+    <div id="progress" class="h-full w-0 bg-navy2"></div>
+  </div>
+
+  <div class="bg-geo min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-[70] bg-paper/70 backdrop-blur border-b border-line">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex items-center justify-between py-4">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="font-serif tracking-wide text-sm sm:text-base">
+              <span class="text-ink">SAB DESIGN</span>
+            </div>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-7 text-[11px] uppercase tracking-widest text-slate-800">
+            <a class="navlink" href="#home">Home</a>
+            <a class="navlink" href="#showcase">Showcase</a>
+            <a class="navlink" href="#work">Work</a>
+            <a class="navlink" href="#services">Services</a>
+            <a class="navlink" href="#contact">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-2">
+            <a href="#contact"
+               class="hidden sm:inline-flex items-center justify-center rounded-lg bg-navy px-4 py-2 text-white text-xs font-semibold shadow-sm hover:bg-navy2 transition">
+              GET IN TOUCH
+            </a>
+
+            <button id="menuBtn"
+              class="md:hidden inline-flex items-center justify-center rounded-lg border border-line bg-paper px-3 py-2">
+              <span class="sr-only">Open menu</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile nav -->
+        <div id="mobileMenu" class="md:hidden hidden pb-4">
+          <div class="grid gap-2 text-xs uppercase tracking-widest">
+            <a class="rounded-lg px-3 py-2 hover:bg-cream/60" href="#home">Home</a>
+            <a class="rounded-lg px-3 py-2 hover:bg-cream/60" href="#showcase">Showcase</a>
+            <a class="rounded-lg px-3 py-2 hover:bg-cream/60" href="#work">Work</a>
+            <a class="rounded-lg px-3 py-2 hover:bg-cream/60" href="#services">Services</a>
+            <a class="rounded-lg px-3 py-2 hover:bg-cream/60" href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="home" class="mx-auto max-w-6xl px-4">
+      <!-- HERO (mobile showcase focused) -->
+      <section class="grid lg:grid-cols-12 gap-8 items-center py-10 lg:py-14">
+        <!-- Text -->
+        <div class="lg:col-span-6 reveal">
+          <div class="inline-flex items-center gap-2 rounded-full border border-line bg-white/60 px-3 py-1 text-[11px] uppercase tracking-widest text-slate-700">
+            <span class="h-1.5 w-1.5 rounded-full bg-gold"></span>
+            Mobile-first experiences
+          </div>
+
+          <h1 class="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink">
+            CRAFTING ENGAGING<br/>
+            DIGITAL EXPERIENCES
+          </h1>
+
+          <div class="mt-6 text-[11px] uppercase tracking-widest font-semibold text-slate-800">
+            WEB DESIGN • UI/UX • DEVELOPMENT • BRANDING
+          </div>
+
+          <p class="mt-4 text-sm sm:text-base text-slate-700 max-w-xl">
+            Premium, editorial websites—now showcased with a mobile-first lens. Replace the screenshots with your own
+            app/website mobile screens.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#showcase" class="btn-primary">VIEW MOBILE SHOWCASE</a>
+            <a href="#work" class="btn-ghost">VIEW PROJECTS</a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-3 gap-3 max-w-xl">
+            <div class="stat">
+              <div class="stat-num"><span class="count" data-to="48">0</span>+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num"><span class="count" data-to="98">0</span>%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num"><span class="count" data-to="12">0</span>y</div>
+              <div class="stat-label">Experience</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phones -->
+        <div class="lg:col-span-6 reveal">
+          <div id="heroParallax" class="relative">
+            <div class="hero-phones">
+              <!-- Back phone -->
+              <div class="phone tilt" data-tilt data-depth="0.55">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <!-- Replace image -->
+                    <img src="./Images/404543-smartphones-apple-iphone-13-10023483.webp" alt="Mobile screen 2">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Front phone -->
+              <div class="phone phone-front tilt " data-tilt data-depth="0.95" style="animation-delay:-1.2s">
+                <div class="phone-frame">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <!-- Replace image -->
+                    <img src="./Images/ZgTCXxjAo8nT4Vs9fW9Rbg.jpg" alt="Mobile screen 1">
+                  </div>
+                </div>
+
+                <div class="phone-badge">
+                  <span class="dot"></span>
+                  Swipe showcase below
+                </div>
+              </div>
+            </div>
+
+            <!-- Decorative card -->
+            <div class="mt-6 rounded-2xl border border-line bg-white/65 shadow-soft p-4">
+              <div class="text-[11px] uppercase tracking-widest text-slate-700 font-semibold">Mobile polish checklist</div>
+              <div class="mt-3 grid grid-cols-2 gap-2 text-[11px] text-slate-700">
+                <div class="pill">Tap targets</div>
+                <div class="pill">Readable type</div>
+                <div class="pill">Smooth motion</div>
+                <div class="pill">Fast load</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOBILE SHOWCASE (carousel) -->
+      <section id="showcase" class="py-10 lg:py-14">
+        <div class="reveal text-center">
+          <h2 class="font-serif text-2xl sm:text-3xl tracking-tight text-ink">MOBILE SHOWCASE</h2>
+          <p class="mt-3 text-sm text-slate-700 max-w-2xl mx-auto">
+            This slider is animated + auto-plays. Replace images with your mobile screenshots.
+          </p>
+        </div>
+
+        <div class="mt-8 reveal">
+          <div class="showcase-shell">
+            <div class="showcase-top">
+              <div class="text-[11px] uppercase tracking-widest text-slate-700 font-semibold">Screens</div>
+              <div class="flex items-center gap-2">
+                <button id="scPrev" class="test-btn" type="button">Prev</button>
+                <button id="scNext" class="test-btn" type="button">Next</button>
+              </div>
+            </div>
+
+            <div id="showcaseTrack" class="showcase-track" aria-label="Mobile screenshot carousel">
+              <!-- Slide 1 -->
+              <div class="showcase-slide">
+                <div class="phone phone-big tilt" data-tilt>
+                  <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                      <img src="./Images/inifinix note 50.jpg" alt="Showcase 1">
+                    </div>
+                  </div>
+                </div>
+                <div class="showcase-caption">
+                  <div class="cap-title">Onboarding flow</div>
+                  <div class="cap-text">Infinix Note 40</div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="showcase-slide">
+                <div class="phone phone-big tilt" data-tilt>
+                  <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                      <img src="./Images/Capa magnética para iPhone 13 e 14.jfif" alt="Showcase 2">
+                    </div>
+                  </div>
+                </div>
+                <div class="showcase-caption">
+                  <div class="cap-title">Product details</div>
+                  <div class="cap-text">Iphone 13</div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="showcase-slide">
+                <div class="phone phone-big tilt" data-tilt>
+                  <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                      <img src="./Images/hmd-150-music-pakistan-priceoye-459qz-500x500-1.webp" alt="Showcase 3">
+                    </div>
+                  </div>
+                </div>
+                <div class="showcase-caption">
+                  <div class="cap-title">Dashboard</div>
+                  <div class="cap-text">HMD</div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="showcase-slide">
+                <div class="phone phone-big tilt" data-tilt>
+                  <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                      <img src="images/sasung.jpg" alt="Showcase 4">
+                    </div>
+                  </div>
+                </div>
+                <div class="showcase-caption">
+                  <div class="cap-title">Checkout</div>
+                  <div class="cap-text">Samsung</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-dots" id="scDots" aria-label="Carousel pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK (project grid + modal) -->
+<section id="work" class="py-10 lg:py-14">
+  <div class="reveal text-center">
+    <h2 class="font-serif text-2xl sm:text-3xl tracking-tight text-ink">FEATURED PROJECTS</h2>
+    <p class="mt-3 text-sm text-slate-700 max-w-2xl mx-auto">
+      Cards animate on scroll and hover. Click “View Project” to open modal.
+    </p>
+  </div>
+
+  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <!-- 1 -->
+    <article class="proj-card reveal">
+      <div class="proj-thumb">
+        <img loading="lazy"
+          src="https://source.unsplash.com/1200x800/?smartphone,mobile,app&sig=11"
+          alt="Zenith Ecommerce">
+      </div>
+      <div class="proj-body">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="proj-title">ZENITH ECOMMERCE</h3>
+            <p class="proj-sub">Minimal mobile store</p>
+            <p class="proj-meta">Services<br><span>Web Design, UI/UX, Dev</span></p>
+          </div>
+          <div class="proj-year">2024</div>
+        </div>
+        <button class="proj-btn openModal"
+          data-title="Zenith Ecommerce"
+          data-year="2024"
+          data-tags="Web Design • UI/UX • Dev"
+          data-desc="A mobile-first ecommerce layout with fast product discovery and clean checkout."
+          data-img="https://source.unsplash.com/1200x800/?smartphone,mobile,app&sig=11">
+          VIEW PROJECT
+        </button>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="proj-card reveal">
+      <div class="proj-thumb">
+        <img loading="lazy"
+          src="https://source.unsplash.com/1200x800/?iphone,mobile,ui&sig=22"
+          alt="Aura Travel Guide">
+      </div>
+      <div class="proj-body">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="proj-title">AURA TRAVEL GUIDE</h3>
+            <p class="proj-sub">Editorial mobile UX</p>
+            <p class="proj-meta">Services<br><span>Web Design, UI/UX</span></p>
+          </div>
+          <div class="proj-year">2022</div>
+        </div>
+        <button class="proj-btn openModal"
+          data-title="Aura Travel Guide"
+          data-year="2022"
+          data-tags="Web Design • UI/UX"
+          data-desc="A travel experience tuned for mobile reading and swipe-based discovery."
+          data-img="https://source.unsplash.com/1200x800/?iphone,mobile,ui&sig=22">
+          VIEW PROJECT
+        </button>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="proj-card reveal">
+      <div class="proj-thumb">
+        <img loading="lazy"
+          src="https://source.unsplash.com/1200x800/?android,phone,design&sig=33"
+          alt="Novus Corporate">
+      </div>
+      <div class="proj-body">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="proj-title">NOVUS CORPORATE</h3>
+            <p class="proj-sub">Responsive system</p>
+            <p class="proj-meta">Services<br><span>Web Design, UI/UX, Dev</span></p>
+          </div>
+          <div class="proj-year">2023</div>
+        </div>
+        <button class="proj-btn openModal"
+          data-title="Novus Corporate"
+          data-year="2023"
+          data-tags="Web Design • UI/UX • Dev"
+          data-desc="A corporate UI system designed to stay clean and readable on small screens."
+          data-img="https://source.unsplash.com/1200x800/?android,phone,design&sig=33">
+          VIEW PROJECT
+        </button>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="proj-card reveal">
+      <div class="proj-thumb">
+        <img loading="lazy"
+          src="https://source.unsplash.com/1200x800/?mobile,interface,app&sig=44"
+          alt="Solace Wellness">
+      </div>
+      <div class="proj-body">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="proj-title">SOLACE WELLNESS</h3>
+            <p class="proj-sub">App flow</p>
+            <p class="proj-meta">Services<br><span>UX Design, App UI</span></p>
+          </div>
+          <div class="proj-year">2024</div>
+        </div>
+        <button class="proj-btn openModal"
+          data-title="Solace Wellness"
+          data-year="2024"
+          data-tags="UX • App UI"
+          data-desc="Gentle motion + calming color system optimized for mobile sessions."
+          data-img="https://source.unsplash.com/1200x800/?mobile,interface,app&sig=44">
+          VIEW PROJECT
+        </button>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="proj-card reveal">
+      <div class="proj-thumb">
+        <img loading="lazy"
+          src="https://source.unsplash.com/1200x800/?phone,website,responsive&sig=55"
+          alt="Sphere SaaS">
+      </div>
+      <div class="proj-body">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="proj-title">SPHERE SAAS</h3>
+            <p class="proj-sub">Landing + mobile</p>
+            <p class="proj-meta">Services<br><span>Web Design, Dev</span></p>
+          </div>
+          <div class="proj-year">2023</div>
+        </div>
+        <button class="proj-btn openModal"
+          data-title="Sphere SaaS"
+          data-year="2023"
+          data-tags="Web Design • Dev"
+          data-desc="A modern landing with mobile-first sections and smooth scroll animations."
+          data-img="https://source.unsplash.com/1200x800/?phone,website,responsive&sig=55">
+          VIEW PROJECT
+        </button>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="proj-card reveal">
+      <div class="proj-thumb">
+        <img loading="lazy"
+          src="https://source.unsplash.com/1200x800/?smartphone,product,screen&sig=66"
+          alt="Lumina Gallery">
+      </div>
+      <div class="proj-body">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="proj-title">LUMINA GALLERY</h3>
+            <p class="proj-sub">Visual portfolio</p>
+            <p class="proj-meta">Services<br><span>Web Design, Motion</span></p>
+          </div>
+          <div class="proj-year">2026</div>
+        </div>
+        <button class="proj-btn openModal"
+          data-title="Lumina Gallery"
+          data-year="2026"
+          data-tags="Web Design • Motion"
+          data-desc="A gallery layout that feels premium on mobile: big visuals, clean type, subtle motion."
+          data-img="https://source.unsplash.com/1200x800/?smartphone,product,screen&sig=66">
+          VIEW PROJECT
+        </button>
+      </div>
+    </article>
+  </div>
+</section>
+
+      <!-- SERVICES -->
+      <section id="services" class="py-10 lg:py-14">
+        <div class="reveal text-center">
+          <h2 class="font-serif text-2xl sm:text-3xl tracking-tight text-ink">SERVICES</h2>
+          <p class="mt-3 text-sm text-slate-700 max-w-2xl mx-auto">
+            Built for real devices: spacing, tap targets, readability, and performance.
+          </p>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-5">
+          <div class="svc-card reveal">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5 text-gold">
+                <path d="M4 7h16M4 12h10M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">Web Design</h3>
+            <p class="svc-text">Premium layout and typography that stays clean on mobile screens.</p>
+          </div>
+
+          <div class="svc-card reveal">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5 text-gold">
+                <path d="M7 7h10v10H7z" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 12h3M17 12h3M12 4v3M12 17v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">UI/UX Development</h3>
+            <p class="svc-text">Responsive builds + motion, optimized for performance and accessibility.</p>
+          </div>
+
+          <div class="svc-card reveal">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5 text-gold">
+                <path d="M12 2l4 8 8 1-6 6 2 9-8-4-8 4 2-9-6-6 8-1 4-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">Branding</h3>
+            <p class="svc-text">Identity systems that remain consistent across mobile and desktop.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="py-10 lg:py-14">
+        <div class="reveal rounded-2xl border border-line bg-white/70 shadow-soft overflow-hidden">
+          <div class="grid lg:grid-cols-2">
+            <div class="p-6 sm:p-8">
+              <h2 class="font-serif text-2xl sm:text-3xl tracking-tight text-ink">CONTACT</h2>
+              <p class="mt-3 text-sm text-slate-700">
+                Demo form with animated “sent” state (no backend).
+              </p>
+
+              <div class="mt-6 grid gap-3 text-sm text-slate-700">
+                <div class="rounded-xl border border-line bg-paper/60 p-4">
+                  <div class="text-[11px] uppercase tracking-widest text-slate-600">Email</div>
+                  <div class="mt-1 font-semibold">hello@sabdesign.com</div>
+                </div>
+                <div class="rounded-xl border border-line bg-paper/60 p-4">
+                  <div class="text-[11px] uppercase tracking-widest text-slate-600">Response time</div>
+                  <div class="mt-1 font-semibold">24–48 hours</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-8 border-t lg:border-t-0 lg:border-l border-line bg-cream/50">
+              <form id="contactForm" class="grid gap-4">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <label class="grid gap-2 text-sm">
+                    <span class="text-[11px] uppercase tracking-widest text-slate-700 font-semibold">Name</span>
+                    <input required name="name" class="input" placeholder="Your name" />
+                  </label>
+                  <label class="grid gap-2 text-sm">
+                    <span class="text-[11px] uppercase tracking-widest text-slate-700 font-semibold">Email</span>
+                    <input required type="email" name="email" class="input" placeholder="you@email.com" />
+                  </label>
+                </div>
+
+                <label class="grid gap-2 text-sm">
+                  <span class="text-[11px] uppercase tracking-widest text-slate-700 font-semibold">Project details</span>
+                  <textarea required name="message" rows="5" class="input" placeholder="Tell me what you want to build..."></textarea>
+                </label>
+
+                <div class="flex items-center justify-between gap-3">
+                  <div class="text-[11px] text-slate-600">Front-end only template.</div>
+                  <button class="btn-primary" type="submit">SEND</button>
+                </div>
+
+                <div id="formToast" class="hidden rounded-xl border border-emerald-500/25 bg-emerald-500/10 p-4 text-sm text-emerald-900">
+                  Sent! I’ll reply soon.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-10">
+        <div class="reveal rounded-2xl border border-line bg-navy text-white px-6 py-6">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs tracking-widest uppercase">SAB DESIGN © <span id="year"></span></div>
+            <div class="flex items-center gap-3 text-xs tracking-widest uppercase">
+              <a class="hover:opacity-80" href="#home">Top</a>
+              <span class="opacity-40">•</span>
+              <a class="hover:opacity-80" href="#showcase">Showcase</a>
+              <span class="opacity-40">•</span>
+              <a class="hover:opacity-80" href="#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Project Modal -->
+  <div id="modal" class="fixed inset-0 z-[90] hidden">
+    <div id="modalBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+
+    <div class="absolute inset-0 grid place-items-center p-4">
+      <div id="modalPanel" class="w-full max-w-3xl rounded-2xl border border-line bg-paper shadow-soft overflow-hidden">
+        <div class="p-5 sm:p-6 border-b border-line flex items-start justify-between gap-4">
+          <div>
+            <div class="text-[11px] uppercase tracking-widest text-slate-600">Project</div>
+            <h3 id="mTitle" class="mt-1 font-serif text-2xl text-ink">Title</h3>
+            <div class="mt-2 text-[11px] text-slate-600">
+              <span id="mYear"></span> • <span id="mTags"></span>
+            </div>
+          </div>
+          <button id="closeModal" class="rounded-lg border border-line bg-white/60 px-3 py-2 text-xs uppercase tracking-widest hover:bg-cream/70">
+            Close
+          </button>
+        </div>
+
+        <div class="p-5 sm:p-6">
+          <div class="rounded-xl border border-line overflow-hidden bg-white">
+            <img id="mImg" src="" alt="Project image" class="w-full h-[280px] object-cover" />
+          </div>
+
+          <p id="mDesc" class="mt-4 text-sm text-slate-700 leading-relaxed"></p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#contact" class="btn-primary">START A PROJECT</a>
+            <button id="modalNext" class="btn-ghost" type="button">NEXT PROJECT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
